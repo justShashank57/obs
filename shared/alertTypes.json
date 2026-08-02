@@ -1,0 +1,58 @@
+{
+  "follow": {
+    "icon": "➕",
+    "defaultMessage": "{username} just followed!",
+    "defaultSound": "/sounds/alert-small.mp3",
+    "tier": "small",
+    "label": "Follow"
+  },
+  "sub": {
+    "icon": "⭐",
+    "defaultMessage": "{username} subscribed! ({tier})",
+    "defaultSound": "/sounds/alert-medium.mp3",
+    "tier": "medium",
+    "label": "Subscription"
+  },
+  "giftsub": {
+    "icon": "🎁",
+    "defaultMessage": "{username} gifted {amount} subs!",
+    "defaultSound": "/sounds/alert-big.mp3",
+    "tier": "big",
+    "label": "Gifted Subs"
+  },
+  "cheer": {
+    "icon": "💎",
+    "defaultMessage": "{username} cheered {amount} bits!",
+    "defaultSound": "/sounds/alert-medium.mp3",
+    "tier": "medium",
+    "label": "Cheer / Bits"
+  },
+  "donation": {
+    "icon": "💰",
+    "defaultMessage": "{username} donated {amount}!",
+    "defaultSound": "/sounds/alert-big.mp3",
+    "tier": "big",
+    "label": "Donation"
+  },
+  "raid": {
+    "icon": "🚀",
+    "defaultMessage": "{username} raided with {amount} viewers!",
+    "defaultSound": "/sounds/alert-big.mp3",
+    "tier": "big",
+    "label": "Raid"
+  },
+  "superchat": {
+    "icon": "💬",
+    "defaultMessage": "{username} sent a Super Chat: {amount}",
+    "defaultSound": "/sounds/alert-medium.mp3",
+    "tier": "medium",
+    "label": "Super Chat"
+  },
+  "membership": {
+    "icon": "🏅",
+    "defaultMessage": "{username} became a member!",
+    "defaultSound": "/sounds/alert-small.mp3",
+    "tier": "small",
+    "label": "Membership"
+  }
+}

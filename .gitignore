@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+server/src/data/*.runtime.json
+server/src/data/credentials.json
+
+*.log
+.vite/
+.DS_Store

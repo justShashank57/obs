@@ -1,0 +1,19 @@
+.webcam-frame-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webcam-frame {
+  width: 90%;
+  height: 90%;
+  border-style: solid;
+  border-color: var(--color-primary);
+  border-radius: calc(var(--border-radius) * 1.5);
+  box-sizing: border-box;
+}
+
+.webcam-frame--rotate-gradient {
+  --angle: 0deg;
+  border-image: conic-gradient(from var(--angle), var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary)) 1;
+}

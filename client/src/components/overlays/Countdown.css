@@ -1,0 +1,33 @@
+.countdown-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.countdown-content {
+  padding: 40px 60px;
+}
+
+.countdown-title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+}
+
+.countdown-timer {
+  font-family: var(--font-heading);
+  font-size: 84px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.countdown-message {
+  margin-top: 16px;
+  font-family: var(--font-body);
+  font-size: 20px;
+  opacity: 0.9;
+}

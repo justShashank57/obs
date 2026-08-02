@@ -1,0 +1,38 @@
+.label-page {
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  justify-content: center;
+}
+
+.label-bar {
+  background: var(--color-background);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: 10px 28px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  max-width: 640px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.label-bar--static {
+  text-overflow: ellipsis;
+}
+
+.label-ticker-track {
+  display: inline-flex;
+  gap: 60px;
+  animation: label-scroll 12s linear infinite;
+}
+
+@keyframes label-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,36 @@
+# docker compose up --build
+# Gives you a running deployment at http://localhost:4000 with Redis available
+# for the optional horizontal-scaling setup (REDIS_URL) — safe to remove the
+# redis service entirely for a single-process deployment.
+version: '3.8'
+services:
+  server:
+    build: .
+    ports:
+      - '4000:4000'
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      SESSION_SECRET: ${SESSION_SECRET:?set a real SESSION_SECRET in your .env before running}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      CORS_ORIGIN: ${CORS_ORIGIN:-}
+      TWITCH_CLIENT_ID: ${TWITCH_CLIENT_ID:-}
+      TWITCH_CLIENT_SECRET: ${TWITCH_CLIENT_SECRET:-}
+      TWITCH_ACCESS_TOKEN: ${TWITCH_ACCESS_TOKEN:-}
+      TWITCH_REFRESH_TOKEN: ${TWITCH_REFRESH_TOKEN:-}
+      TWITCH_BROADCASTER_USER_ID: ${TWITCH_BROADCASTER_USER_ID:-}
+      TWITCH_MODERATOR_USER_ID: ${TWITCH_MODERATOR_USER_ID:-}
+      TWITCH_CHANNEL_NAME: ${TWITCH_CHANNEL_NAME:-}
+      YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:-}
+      YOUTUBE_LIVE_CHAT_ID: ${YOUTUBE_LIVE_CHAT_ID:-}
+      REDIS_URL: redis://redis:6379
+    volumes:
+      - overlay-data:/app/server/src/data
+      - ./configs:/app/configs
+    depends_on:
+      - redis
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+volumes:
+  overlay-data:

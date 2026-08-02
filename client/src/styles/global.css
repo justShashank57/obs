@@ -1,0 +1,53 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/700.css';
+
+:root {
+  --color-primary: #9146ff;
+  --color-secondary: #00f0ff;
+  --color-accent: #ffd400;
+  --color-text: #ffffff;
+  --color-background: rgba(20, 20, 30, 0.85);
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius: 16px;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: transparent !important;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Overlay pages (browser sources in OBS) are a single fixed-size view that
+   should never show a scrollbar or scroll — this is scoped to just these
+   pages now, rather than html/body/#root globally, because that global rule
+   was also trapping the control panel (a long, scrollable settings page)
+   and made it impossible to scroll down to later sections. */
+.overlay-page {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Control panel is the one page allowed a real background and real scrolling. */
+.control-panel-page {
+  background: #14141e;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+}

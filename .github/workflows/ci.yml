@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            server/package-lock.json
+            client/package-lock.json
+
+      - name: Install server dependencies
+        run: npm ci --prefix server
+
+      - name: Install client dependencies
+        run: npm ci --prefix client
+
+      - name: Run server unit tests
+        run: npm test --prefix server
+
+      - name: Build client
+        run: npm run build --prefix client
+
+      - name: Boot server smoke test
+        run: |
+          NODE_ENV=development SESSION_SECRET=ci-test-secret node server/src/index.js &
+          SERVER_PID=$!
+          sleep 3
+          curl -sf http://localhost:4000/healthz
+          kill $SERVER_PID

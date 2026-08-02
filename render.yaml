@@ -1,0 +1,36 @@
+# Render.com "Blueprint" — connect this repo on Render and it will offer to
+# deploy this file directly ("one-click deploy" path for non-technical
+# buyers who don't want to run npm/Node locally at all).
+services:
+  - type: web
+    name: stream-overlay-package
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: TWITCH_CLIENT_ID
+        sync: false
+      - key: TWITCH_CLIENT_SECRET
+        sync: false
+      - key: TWITCH_ACCESS_TOKEN
+        sync: false
+      - key: TWITCH_REFRESH_TOKEN
+        sync: false
+      - key: TWITCH_BROADCASTER_USER_ID
+        sync: false
+      - key: TWITCH_MODERATOR_USER_ID
+        sync: false
+      - key: TWITCH_CHANNEL_NAME
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: YOUTUBE_LIVE_CHAT_ID
+        sync: false

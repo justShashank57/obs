@@ -1,0 +1,81 @@
+{
+  "displayName": "Default Client",
+  "theme": {
+    "colors": {
+      "primary": "#9146FF",
+      "secondary": "#00F0FF",
+      "accent": "#FFD400",
+      "text": "#FFFFFF",
+      "background": "rgba(20, 20, 30, 0.85)"
+    },
+    "fonts": {
+      "heading": "'Poppins', sans-serif",
+      "body": "'Inter', sans-serif"
+    },
+    "borderRadius": 16,
+    "logoUrl": ""
+  },
+  "sound": {
+    "enabled": true,
+    "volume": 0.8,
+    "perEventType": {
+      "follow": true,
+      "sub": true,
+      "giftsub": true,
+      "cheer": true,
+      "donation": true,
+      "raid": true,
+      "superchat": true,
+      "membership": true
+    }
+  },
+  "alerts": {
+    "durationMs": 6000,
+    "animation": "pop-glow",
+    "sounds": {
+      "follow": "/sounds/alert-small.mp3",
+      "sub": "/sounds/alert-medium.mp3",
+      "giftsub": "/sounds/alert-big.mp3",
+      "cheer": "/sounds/alert-medium.mp3",
+      "donation": "/sounds/alert-big.mp3",
+      "raid": "/sounds/alert-big.mp3",
+      "superchat": "/sounds/alert-medium.mp3",
+      "membership": "/sounds/alert-small.mp3"
+    },
+    "messages": {
+      "follow": "{username} just followed!",
+      "sub": "{username} subscribed! ({tier})",
+      "giftsub": "{username} gifted {amount} subs!",
+      "cheer": "{username} cheered {amount} bits!",
+      "donation": "{username} donated {amount}!",
+      "raid": "{username} raided with {amount} viewers!",
+      "superchat": "{username} sent a Super Chat: {amount}",
+      "membership": "{username} became a member!"
+    },
+    "replayGraceMs": 30000
+  },
+  "ticker": {
+    "maxItems": 8,
+    "itemDurationMs": 5000,
+    "style": "fade"
+  },
+  "goalBarDefault": {
+    "type": "sub",
+    "label": "Sub Goal",
+    "start": 0,
+    "target": 100
+  },
+  "webcamFrame": {
+    "style": "pulse-border",
+    "borderWidth": 8
+  },
+  "chatOverlay": {
+    "maxMessages": 15,
+    "showPlatformBadge": true
+  },
+  "countdown": {
+    "backgroundUrl": "",
+    "backgroundGradient": "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
+    "showMilliseconds": false
+  }
+}
