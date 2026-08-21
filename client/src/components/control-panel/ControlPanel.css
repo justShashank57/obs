@@ -56,6 +56,32 @@
   font-size: 13px;
 }
 
+.cp-password-field {
+  position: relative;
+  display: flex;
+}
+
+.cp-password-field input {
+  flex: 1;
+  padding-right: 56px;
+}
+
+.cp-password-toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #b9a2ff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
 .cp-shell {
   max-width: 900px;
   margin: 0 auto;

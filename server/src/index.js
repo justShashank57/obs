@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import './loadEnv.js';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';

@@ -35,6 +35,7 @@ export default function ControlPanel() {
   const [session, setSession] = useState(null); // { authed, isAdmin, clientId }
   const [clientIdInput, setClientIdInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState('');
   const [activeClientId, setActiveClientId] = useState(
     new URLSearchParams(window.location.search).get('client') || ''
@@ -81,12 +82,22 @@ export default function ControlPanel() {
             onChange={(e) => setClientIdInput(e.target.value)}
           />
           <label className="cp-login-label">Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            value={passwordInput}
-            onChange={(e) => setPasswordInput(e.target.value)}
-          />
+          <div className="cp-password-field">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+            />
+            <button
+              type="button"
+              className="cp-password-toggle"
+              onClick={() => setShowPassword((v) => !v)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+            >
+              {showPassword ? 'Hide' : 'Show'}
+            </button>
+          </div>
           <button type="submit">Log in</button>
           {loginError && <div className="cp-error">{loginError}</div>}
         </form>
